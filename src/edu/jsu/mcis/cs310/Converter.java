@@ -82,10 +82,18 @@ public class Converter {
         try {
         
             // INSERT YOUR CODE HERE
-        CSVReader reader = new CSVReader(new StringReader(csvString));
-        List<String[]> full = reader.readAll();
-        String[] headings = full.get(0);
-        System.out.print(Arrays.toString(headings));
+            CSVReader reader = new CSVReader(new StringReader(csvString));
+            List<String[]> full = reader.readAll();
+            
+            for (int i = 0; i < full.size(); ++i) {
+                //System.out.println(Arrays.toString(full.get(i)));
+                
+                //(i) are rows and x are columns
+                for (int x = 0; x < full.get(i).length; ++x) {
+                    System.out.println(full.get(i)[x]);
+                }
+                
+            }
         }
         catch (Exception e) {
             e.printStackTrace();
