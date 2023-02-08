@@ -2,6 +2,9 @@ package edu.jsu.mcis.cs310;
 
 import com.github.cliftonlabs.json_simple.*;
 import com.opencsv.*;
+import java.io.StringReader;
+import java.util.Arrays;
+import java.util.List;
 
 public class Converter {
     
@@ -79,7 +82,10 @@ public class Converter {
         try {
         
             // INSERT YOUR CODE HERE
-            
+        CSVReader reader = new CSVReader(new StringReader(csvString));
+        List<String[]> full = reader.readAll();
+        String[] headings = full.get(0);
+        System.out.print(Arrays.toString(headings));
         }
         catch (Exception e) {
             e.printStackTrace();
